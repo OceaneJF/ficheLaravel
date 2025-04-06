@@ -1,6 +1,6 @@
 @extends('base')
 @section('content')
-    <h1>Products</h1>
+    <h1>My Products</h1>
     <div>
         @if(session()->has('success'))
             <div>
@@ -9,11 +9,11 @@
         @endif
     </div>
     <div>
-        @auth
-            <div>
-                <a href="{{route('product.create')}}">Create a product</a>
-            </div>
-        @endauth
+
+        <div>
+            <a href="{{route('product.create')}}">Create a product</a>
+        </div>
+
 
         <table>
             <tr>
@@ -33,20 +33,21 @@
                     <td>{{$product->qty}}</td>
                     <td>{{$product->price}}</td>
                     <td>{{$product->description}}</td>
-                    @auth
-                        <td>
-                            <a href="{{route('product.edit',['product'=> $product])}}">Edit</a>
-                        </td>
-                        <td>
-                            <a href="{{route('product.show',['product'=> $product])}}">Show</a>
-                        </td>
-                        <td>
-                            @include('products.delete',['product' => $product])
-                        </td>
-                    @endauth
+
+                    <td>
+                        <a href="{{route('product.edit',['product'=> $product])}}">Edit</a>
+                    </td>
+                    <td>
+                        <a href="{{route('product.show',['product'=> $product])}}">Show</a>
+                    </td>
+                    <td>
+                        @include('products.delete',['product' => $product])
+                    </td>
+
 
                 </tr>
             @endforeach
         </table>
     </div>
 @endsection
+
