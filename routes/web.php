@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\InputController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,6 @@ Route::post('/login', [AuthController::class, 'doLogin']);
 Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/backoffice', [ProductController::class, 'backoffice'])->name('backoffice')->middleware(['auth', 'role:admin']);
+
+Route::get('/meteo', [InputController::class, 'showInputForm'])->name('showInputForm');
+Route::post('/meteo', [InputController::class, 'InputForm'])->name('InputForm');
