@@ -19,6 +19,7 @@
 <nav>
     <a href="{{route('product.index')}}">Les produits</a>
     <a href="{{route('showInputForm')}}">La meteo</a>
+    <a href="{{route('posts')}}">les posts</a>
     @guest
         <a href="{{route('login')}}">Connexion</a>
         <a href="{{route('register')}}">S'inscrire</a>

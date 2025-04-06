@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\InputController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,3 +31,9 @@ Route::get('/backoffice', [ProductController::class, 'backoffice'])->name('backo
 
 Route::get('/meteo', [InputController::class, 'showInputForm'])->name('showInputForm');
 Route::post('/meteo', [InputController::class, 'InputForm'])->name('InputForm');
+
+Route::prefix("post")->group(function () {
+    Route::get('/create', [PostController::class, 'showCreate'])->name('showCreate');
+    Route::post('/create', [PostController::class, 'create'])->name('create');
+    Route::get('/posts', [PostController::class, 'posts'])->name('posts');
+});
