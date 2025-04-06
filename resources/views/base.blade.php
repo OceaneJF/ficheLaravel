@@ -30,6 +30,9 @@
             <button>Se deconnecter</button>
         </form>
         <a href="{{route('product.myProduct')}}">Mes produits</a>
+        @if (Auth::user()->hasRole('admin'))
+            <a href="{{ route('backoffice') }}">Backoffice</a>
+        @endif
     @endauth
 
 </nav>

@@ -24,3 +24,5 @@ Route::post('/register', [AuthController::class, 'doRegister']);
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'doLogin']);
 Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/backoffice', [ProductController::class, 'backoffice'])->name('backoffice')->middleware(['auth', 'role:admin']);

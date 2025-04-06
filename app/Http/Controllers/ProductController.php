@@ -64,4 +64,9 @@ class ProductController extends Controller
     {
         return view('products.show', ['product' => $product]);
     }
+
+    public function backoffice()
+    {
+        return view('backoffice');
+    }
 }
