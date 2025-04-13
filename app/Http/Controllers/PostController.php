@@ -13,9 +13,11 @@ class PostController extends Controller
         return view('post.create');
     }
 
+
     public function posts()
     {
-        $posts = DB::table("posts")->orderBy("id", "desc")->get();
+        $posts = DB::table("posts")->orderBy("id", "desc")->paginate(10);
+
         return view('home', ['posts' => $posts]);
     }
 

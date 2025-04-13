@@ -9,7 +9,7 @@
             <h2>{{$post->titre}}</h2>
             <p>{{$post->body}}</p>
         @endforeach
-
+            {{ $posts->links() }}
     </div>
 
 @endsection

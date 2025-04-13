@@ -10,3 +10,68 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+/* Pagination générale */
+.pagination {
+    display: flex;
+    align-items: center;
+    /*background: rgba( 255, 255, 255, 0 );*/
+    /*box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );*/
+    /*backdrop-filter: blur( 20px );*/
+    /*-webkit-backdrop-filter: blur( 20px );*/
+    /*border-radius: 10px;*/
+    /*border: 1px solid rgba( 255, 255, 255, 0.18 );}*/
+
+}
+/* Liens de pagination */
+.pagination li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    min-width: 32px;
+    padding: 0 12px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #797870; /* text-gray-500 */
+    background-color: transparent;
+    border: 1px solid #d1d5db; /* border-gray-300 */
+    transition: all 0.2s ease-in-out;
+}
+
+/* Hover */
+.pagination li a:hover {
+    background-color: #f3f4f6; /* hover:bg-gray-100 */
+    color: #374151; /* hover:text-gray-700 */
+}
+
+/* Page active */
+.pagination li a.active {
+    background-color: #F7FFFE; /* bg-blue-50 */
+    border-color: #00A3A6;     /* border-blue-300 */
+    color: #00A3A6;            /* text-blue-600 */
+}
+
+
+/* Coins arrondis (optionnel, si tu veux styliser les extrémités) */
+.pagination li:first-child a {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-right: none;
+}
+
+.pagination li:last-child a {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-left: none;
+}
+
+/* Icônes flèches */
+.icon {
+    width: 15px;
+    height: 15px;
+}
+.rotate{
+    transform: rotate(180deg);
+}
+
+
