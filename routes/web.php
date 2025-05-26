@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AutoController;
+use App\Http\Controllers\FichierController;
 use App\Http\Controllers\InputController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
@@ -36,4 +38,15 @@ Route::prefix("post")->group(function () {
     Route::get('/create', [PostController::class, 'showCreate'])->name('showCreate');
     Route::post('/create', [PostController::class, 'create'])->name('create');
     Route::get('/posts', [PostController::class, 'posts'])->name('posts');
+});
+
+Route::prefix("fichier")->group(function () {
+    Route::get('/', [FichierController::class, 'index'])->name('fichier.index');
+    Route::put('/create', [FichierController::class, 'create'])->name('fichier.create');
+});
+
+Route::prefix("lapin")->group(function () {
+    Route::get('/{lapin}/edit', [AutoController::class, 'edit'])->name('lapin.index');
+    Route::put('/{lapin}/update', [AutoController::class, 'update'])->name('lapin.update');
+    Route::put('/{lapin}/lapin-update', [AutoController::class, 'autoUpdate'])->name('lapin.autoUpdate');
 });
